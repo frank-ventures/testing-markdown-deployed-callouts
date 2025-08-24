@@ -83,19 +83,19 @@ We can make our own Note boxes
 
 Take note of this, dear user!
 
+Some kinda really very helpful note would go here.
+
+You can still type regular text, no need for p tags!
+
 </blockquote>
 
 Our own tip boxes:
 
-<blockquote class="tip">
+<blockquote markdown="1" class="tip">
 
 **Tip!**
 
-Some kinda really very helpful tip would go here.
-
-And some extra bonus stuff.
-
-You can still type regular text, no need for p tags!
+This absolute top tip reminds us that we need to include the attribute `markdown="1"` inside of our HTML tags if we want the included markdown to be formatted correctly.
 
 </blockquote>
 
@@ -183,7 +183,7 @@ The main steps to creating a good Notebook are:
 
 From here, you can ask questions of your Notebook to test how well it functions. Add more `Sources` if you need to and explore the options!
 
-<blockquote class="tip">
+<blockquote markdown="1" class="tip">
 
 **💭 Key Tip: Source Types**
 
