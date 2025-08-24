@@ -1,5 +1,6 @@
 blockquote { 
-  background-color: aliceblue; 
+  background-color: khaki; 
   color: black; 
-  border-left: solid 0.25rem tomato; 
+  padding: 0.25rem;
+  border-left: solid 0.25rem limegreen; 
 } 
