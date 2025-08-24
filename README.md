@@ -95,7 +95,7 @@ Some kinda really very helpful tip would go here.
 
 And some extra bonus stuff.
 
-You can still type regular text, no need for `<p>` tags
+You can still type regular text, no need for p tags!
 
 </blockquote>
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>README</title>
+	<style>
+		/* Basic styles for readability */
+		body {
+			font-family: sans-serif;
+			max-width: 800px;
+			margin: 2em auto;
+			padding: 0 1em;
+			line-height: 1.6;
+		}
+		img { max-width: 100%; height: auto; }
+		pre { background-color: #f4f4f4; padding: 1em; overflow-x: auto; }
+		code { font-family: monospace; }
+	</style>
+</head>
+<body>
+	<h1>testing-markdown-deployed-callouts</h1>
+<p>Let’s see what different quote/callout blocks look like when deployed on Github pages.</p>
+<h2>Introduction: The quote block</h2>
+<blockquote>
+<p><strong>💭 Quotes!</strong></p>
+<p>This is a quote block.</p>
+<p>You may have seen them before. You can use them to, well, quote text.</p>
+<p>They get shown in a kinda grey font colour I don’t really like. But not with some CSS applied!</p>
+</blockquote>
+<p>In markdown you create quotes using a <code>&gt;</code> character at the start of multiple lines.</p>
+<h3>Edit their style</h3>
+<p>It’s very easy to achieve this look!</p>
+<p>To edit the styling of <strong>every</strong> blockquote on a deployed GitHub page, you need an <code>assets/css/style.css</code> file. Target the <code>blockquote</code> HTML element and your styles will apply. Job done 🎉.</p>
+<pre><code class="language-css">blockquote {
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(201, 201, 201, 1);
+}
+</code></pre>
+<p>If you make the first line of the quote <strong>bold</strong> by using <code>**asterisks**</code>in your markdown, this translates to a <code>&lt;strong&gt;</code> element, so just target that in your CSS if you want to customise it:</p>
+<pre><code class="language-css">blockquote strong {
+  font-family: ;
+  font-size: 1.25rem;
+}
+</code></pre>
+<h3>Custom <code>blockquotes</code></h3>
+<p>I guess if you want custom blockquotes on your deployed GitHub page (as in, ones which have different styling dependent on their content like the examples below) then you’d have to use HTML in your README file and use the <code>blockquote</code> element with CSS classes, combined with the stylesheet explained above.</p>
+<p>Read on!</p>
+<h2>Notice blocks! - Great on GitHub, pants when deployed</h2>
+<p>Woah, look at these guys!</p>
+<p>Well actually, look at them in a GitHub repo because that’s where you’ll see their unique styling. On a deployed page they will not show up. Boo 👎</p>
+<blockquote>
+<p>[!NOTE]
+This is a note block. What does it look like when deployed? Well, if you’re looking at it, it looks like this…</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]</p>
+<p><strong>We also have tips!</strong></p>
+<p>Tips are cool. Tips are like, “Hey here’s a secret you didn’t know!”</p>
+<p>Tips!</p>
+</blockquote>
+<blockquote>
+<p>[!WARNING]</p>
+<p>These originated from a band called Green Day.</p>
+</blockquote>
+<blockquote>
+<p>[!CAUTION]</p>
+<p>Caution, this caution is different to a Warning. Why? Who knows</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p>Important stuff is very important!</p>
+</blockquote>
+<h2>Just using regular HTML</h2>
+<p>Annoyingly then, unless you install some extra markdown extensions, perhaps the best <em>(and only)</em> way to get a set of styled <code>blockquote</code>s when you’re using deployed Github pages is to use the <code>&lt;blockquote&gt;</code> HTML element with some good old CSS classes.</p>
+<p>We can make our own Note boxes</p>
+<blockquote class="note">
+<strong>Note!</strong>
+<p>Take note of this, dear user!</p>
+</blockquote>
+<p>Our own tip boxes:</p>
+<blockquote class="tip">
+<p><strong>Tip!</strong></p>
+<p>Some kinda really very helpful tip would go here.</p>
+<p>And some extra bonus stuff.</p>
+<p>You can still type regular text, no need for p tags!</p>
+</blockquote>
+<p>and so on and so on.</p>
+<details markdown="1"> <summary>The blockquote CSS:</summary>
+<pre><code class="language-css">.note {
+  background-color: rgba(102, 255, 0, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(0, 136, 18, 1);
+
+  strong {
+    color: darkgreen;
+  }
+}
+
+.tip {
+  background-color: rgba(0, 153, 255, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(0, 47, 255, 1);
+
+  strong {
+    color: darkblue;
+  }
+}
+</code></pre>
+</details>
+<p>Perhaps you could have some kind of <strong>template</strong> file, where you store these bits of HTML, and then your users can just copy/paste those in when needed.</p>
+<p>Custom CSS can also be used really well to point out details tags:</p>
+<details markdown="1"> <summary>Holy moses I am a clickable details tag!:</summary>
+<p>and I am some secret information, woah!</p>
+<p>But seriously, this is another place where some simple CSS can really come in handy if you rely on deployed README GitHub pages.</p>
+</details>
+<p>Good stuff eh?</p>
+<details markdown="1"> <summary>The details CSS:</summary>
+<pre><code class="language-css">details {
+  border-left: 2px solid rgba(199, 162, 41, 1);
+  padding-left: 1rem;
+}
+
+details[open] {
+  background-color: rgb(0, 0, 0, 0.1);
+}
+</code></pre>
+</details>
+<h1>Real World Example</h1>
+<h2>Workshop</h2>
+<blockquote>
+<p><strong>💭 Key Tip: What Google Say</strong></p>
+<p>A notebook in NotebookLM is a collection of sources for a specific project.</p>
+<p>Each notebook is independent. NotebookLM can’t access information across multiple notebooks at the same time.</p>
+</blockquote>
+<h3>To Start</h3>
+<ol>
+<li>⛳️ Go to <a href="https://notebooklm.google.com/">notebooklm.google.com</a>.</li>
+<li>⛳️ On that page, click “Create new notebook”.</li>
+</ol>
+<h3>Creating your Notebook</h3>
+<p>The main steps to creating a good Notebook are:</p>
+<ol>
+<li>
+<p>⛳️ Upload a source in the popup window <em>(you may get taken to a ‘new’ page after uploading just one; that’s OK!)</em></p>
+</li>
+<li>
+<p>⛳️ Continue to add sources using the <code>Sources</code> pane on the left.</p>
+</li>
+</ol>
+<p>From here, you can ask questions of your Notebook to test how well it functions. Add more <code>Sources</code> if you need to and explore the options!</p>
+<blockquote class="tip">
+<p><strong>💭 Key Tip: Source Types</strong></p>
+<p>NotebookLM supports these source types:</p>
+<ul>
+<li>
+<p>Audio files</p>
+</li>
+<li>
+<p>Copy and pasted text</p>
+</li>
+<li>
+<p>Google Docs</p>
+</li>
+<li>
+<p>Google Slides</p>
+</li>
+<li>
+<p>Text, Markdown and PDF files</p>
+</li>
+<li>
+<p>Web URLs</p>
+</li>
+<li>
+<p>YouTube URLs of public videos</p>
+</li>
+</ul>
+</blockquote>
+
+</body>
+</html>
