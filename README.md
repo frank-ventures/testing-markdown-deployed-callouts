@@ -1,3 +1,10 @@
+<style>
+  blockquote {
+    background-color: aliceblue;
+    color: black;
+    border-left: solid 0.25rem tomato;
+  }
+</style>
 # testing-markdown-deployed-callouts
 Let's see what different quote/callout blocks look like when deployed on Github pages.
 
