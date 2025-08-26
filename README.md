@@ -79,27 +79,49 @@ Annoyingly then, unless you install some extra markdown extensions, perhaps the 
 We can make our own Note boxes
 
 <blockquote class="note">
-<strong>Note!</strong>
+<strong>👀 Note!</strong>
 
-Take note of this, dear user!
+Take note of this, dear user! The "Note" text above uses a 'strong' tag.
 
 Some kinda really very helpful note would go here.
 
-You can still type regular text, no need for p tags!
+You can still type regular text, no need for 'p' tags! Just beware of how it will render.
 
 </blockquote>
 
-Our own tip boxes:
+Our own tip boxes, which have CSS classes:
 
 <blockquote markdown="1" class="tip">
 
-**Tip!**
+**💭 Tip!**
 
 This absolute top tip reminds us that we need to include the attribute `markdown="1"` inside of our HTML tags if we want the included markdown to be formatted correctly.
 
 </blockquote>
 
-and so on and so on.
+<blockquote markdown="1" class="warning">
+
+**⚠️ Warning**
+
+Some kinda thing you should be warned of.
+
+</blockquote>
+
+<blockquote markdown="1" class="caution">
+
+**❗ Caution**
+
+Some kinda thing you should be cautious about.
+
+</blockquote>
+
+<blockquote markdown="1" class="important">
+
+**👀 Important**
+
+Some kinda thing which is of utmost importance.
+
+</blockquote>
 
 <details markdown="1"> <summary>The blockquote CSS:</summary>
 
@@ -123,6 +145,39 @@ and so on and so on.
 
   strong {
     color: darkblue;
+  }
+}
+
+.warning {
+  background-color: rgba(255, 217, 0, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(122, 120, 3, 1);
+
+  strong {
+    color: darkgoldenrod;
+  }
+}
+
+.caution {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(122, 3, 3, 1);
+
+  strong {
+    color: darkred;
+  }
+}
+
+.important {
+  background-color: rgba(170, 0, 255, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(90, 3, 122, 1);
+
+  strong {
+    color: darkslateblue;
   }
 }
 ```
@@ -167,6 +222,8 @@ details[open] {
 > A notebook in NotebookLM is a collection of sources for a specific project.
 >
 > Each notebook is independent. NotebookLM can’t access information across multiple notebooks at the same time.
+>
+> _this tip box was made with regular ">" markdown characters_
 
 ### To Start
 
@@ -202,4 +259,7 @@ NotebookLM supports these source types:
 - Web URLs
 
 - YouTube URLs of public videos
+
+_this tip box was made with the blockquote HTML element_
+
 </blockquote>

@@ -26,6 +26,39 @@ blockquote {
   }
 }
 
+.warning {
+  background-color: rgba(255, 217, 0, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(122, 120, 3, 1);
+
+  strong {
+    color: darkgoldenrod;
+  }
+}
+
+.caution {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(122, 3, 3, 1);
+
+  strong {
+    color: darkred;
+  }
+}
+
+.important {
+  background-color: rgba(170, 0, 255, 0.2);
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(90, 3, 122, 1);
+
+  strong {
+    color: darkslateblue;
+  }
+}
+
 blockquote strong {
   font-size: 1.25rem;
 }
