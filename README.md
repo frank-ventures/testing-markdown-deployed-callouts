@@ -79,6 +79,7 @@ Annoyingly then, unless you install some extra markdown extensions, perhaps the 
 We can make our own Note boxes
 
 <blockquote class="note">
+
 <strong>👀 Note!</strong>
 
 Take note of this, dear user! The "Note" text above uses a 'strong' tag.
@@ -277,75 +278,3 @@ NotebookLM supports these source types:
 _this tip box was made with the blockquote HTML element_
 
 </blockquote>
-
-<style>
-  blockquote {
-  color: black;
-  padding: 0.25em 1em;
-  border-left: solid 0.25rem rgba(201, 201, 201, 1);
-}
-
-.note {
-  --dark-colour: #238636;
-  --light-colour: #68bf79ff;
-  padding: 0.25em 1em;
-  border-top: 2px solid var(--light-colour);
-  border-bottom: 2px solid var(--light-colour);
-  border-right: 2px solid var(--light-colour);
-  border-left: solid 0.25rem var(--dark-colour);
-}
-
-.tip {
-  --dark-colour: #1f6feb;
-  --light-colour: #46a3f9ff;
-  padding: 0.25em 1em;
-  border-top: 2px solid var(--light-colour);
-  border-bottom: 2px solid var(--light-colour);
-  border-right: 2px solid var(--light-colour);
-  border-left: solid 0.25rem var(--dark-colour);
-}
-
-.warning {
-  --dark-colour: #9e6a03;
-  --light-colour: #f9d019ff;
-  padding: 0.25em 1em;
-  border-top: 2px solid var(--light-colour);
-  border-bottom: 2px solid var(--light-colour);
-  border-right: 2px solid var(--light-colour);
-  border-left: solid 0.25rem var(--dark-colour);
-}
-
-.caution {
-  --dark-colour: #da3633;
-  --light-colour: #ff7984ff;
-  padding: 0.25em 1em;
-  border-top: 2px solid var(--light-colour);
-  border-bottom: 2px solid var(--light-colour);
-  border-right: 2px solid var(--light-colour);
-  border-left: solid 0.25rem var(--dark-colour);
-}
-
-.important {
-  --dark-colour: #8957e5;
-  --light-colour: #c062ffff;
-  padding: 0.25em 1em;
-  border-top: 2px solid var(--light-colour);
-  border-bottom: 2px solid var(--light-colour);
-  border-right: 2px solid var(--light-colour);
-  border-left: solid 0.25rem var(--dark-colour);
-}
-
-.note > :first-child,
-.tip > :first-child,
-.warning > :first-child,
-.caution > :first-child,
-.important > :first-child
- {
-    color: var(--dark-colour);
-    font-size: 1.25rem;
-}
-
-blockquote strong {
-  font-size: 1.25rem;
-}
-  </style>
