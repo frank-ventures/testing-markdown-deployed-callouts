@@ -126,59 +126,73 @@ Some kinda thing which is of utmost importance.
 <details markdown="1"> <summary>The blockquote CSS:</summary>
 
 ```css
-.note {
-  background-color: rgba(102, 255, 0, 0.2);
+blockquote {
   color: black;
   padding: 0.25em 1em;
-  border-left: solid 0.25rem rgba(0, 136, 18, 1);
+  border-left: solid 0.25rem rgba(201, 201, 201, 1);
+}
 
-  strong {
-    color: darkgreen;
-  }
+.note {
+  --dark-colour: #238636;
+  --light-colour: #68bf79ff;
+  padding: 0.25em 1em;
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
 }
 
 .tip {
-  background-color: rgba(0, 153, 255, 0.2);
-  color: black;
+  --dark-colour: #1f6feb;
+  --light-colour: #46a3f9ff;
   padding: 0.25em 1em;
-  border-left: solid 0.25rem rgba(0, 47, 255, 1);
-
-  strong {
-    color: darkblue;
-  }
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
 }
 
 .warning {
-  background-color: rgba(255, 217, 0, 0.2);
-  color: black;
+  --dark-colour: #9e6a03;
+  --light-colour: #f9d019ff;
   padding: 0.25em 1em;
-  border-left: solid 0.25rem rgba(122, 120, 3, 1);
-
-  strong {
-    color: darkgoldenrod;
-  }
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
 }
 
 .caution {
-  background-color: rgba(255, 0, 0, 0.2);
-  color: black;
+  --dark-colour: #da3633;
+  --light-colour: #ff7984ff;
   padding: 0.25em 1em;
-  border-left: solid 0.25rem rgba(122, 3, 3, 1);
-
-  strong {
-    color: darkred;
-  }
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
 }
 
 .important {
-  background-color: rgba(170, 0, 255, 0.2);
-  color: black;
+  --dark-colour: #8957e5;
+  --light-colour: #c062ffff;
   padding: 0.25em 1em;
-  border-left: solid 0.25rem rgba(90, 3, 122, 1);
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
+}
 
-  strong {
-    color: darkslateblue;
-  }
+.note > p:first-child,
+.tip > p:first-child,
+.warning > p:first-child,
+.caution > p:first-child,
+.important > p:first-child {
+  color: var(--dark-colour);
+  font-size: 1.25rem;
+}
+
+blockquote strong {
+  font-size: 1.25rem;
 }
 ```
 
@@ -263,3 +277,75 @@ NotebookLM supports these source types:
 _this tip box was made with the blockquote HTML element_
 
 </blockquote>
+
+<style>
+  blockquote {
+  color: black;
+  padding: 0.25em 1em;
+  border-left: solid 0.25rem rgba(201, 201, 201, 1);
+}
+
+.note {
+  --dark-colour: #238636;
+  --light-colour: #68bf79ff;
+  padding: 0.25em 1em;
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
+}
+
+.tip {
+  --dark-colour: #1f6feb;
+  --light-colour: #46a3f9ff;
+  padding: 0.25em 1em;
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
+}
+
+.warning {
+  --dark-colour: #9e6a03;
+  --light-colour: #f9d019ff;
+  padding: 0.25em 1em;
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
+}
+
+.caution {
+  --dark-colour: #da3633;
+  --light-colour: #ff7984ff;
+  padding: 0.25em 1em;
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
+}
+
+.important {
+  --dark-colour: #8957e5;
+  --light-colour: #c062ffff;
+  padding: 0.25em 1em;
+  border-top: 2px solid var(--light-colour);
+  border-bottom: 2px solid var(--light-colour);
+  border-right: 2px solid var(--light-colour);
+  border-left: solid 0.25rem var(--dark-colour);
+}
+
+.note > :first-child,
+.tip > :first-child,
+.warning > :first-child,
+.caution > :first-child,
+.important > :first-child
+ {
+    color: var(--dark-colour);
+    font-size: 1.25rem;
+}
+
+blockquote strong {
+  font-size: 1.25rem;
+}
+  </style>
